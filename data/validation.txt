@@ -1,0 +1,5 @@
+An experiment measures how quickly the model predicts bytes.
+A bird flies over a green field near the river.
+The function returns the sum of two numbers.
+Обучение изменяет параметры маленькой модели.
+Validation should not be confused with proof of intelligence.

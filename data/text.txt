@@ -1,0 +1,13 @@
+NEXUS is an experimental model. A small model learns from small examples.
+A model reads bytes and predicts the next byte. Text contains words and punctuation.
+The router selects two experts. The other experts do not run for that token.
+Training changes the weights. Validation uses separate examples.
+A cat sits on a mat. A dog runs in the park. The sun shines in the morning.
+The sky is blue. The grass is green. Water flows down the river.
+One plus one is two. Two plus two is four. Three plus one is four.
+Python is a programming language. A function can return a number.
+Memory stores useful information. Computation consumes time and energy.
+A good experiment reports both successes and failures. A hypothesis is not a fact.
+Модель читает текст. Это маленький эксперимент, а не готовый интеллект.
+Один плюс один равно два. Два плюс два равно четыре.
+Данные нужны для обучения. Проверка нужна для измерения качества.

@@ -1,0 +1,49 @@
+{
+  "training_steps": 60,
+  "first_batch_ce_nats": 5.899237155914307,
+  "last_batch_ce_nats": 3.1594738960266113,
+  "untrained_validation": {
+    "validation_ce_nats": 5.998575163784848,
+    "validation_bits_per_byte_token": 8.654114641192102,
+    "validation_perplexity": 402.85438285524947,
+    "validation_tokens": 744,
+    "quality_note": "sampled held-out next-token loss; includes EOS, not reasoning quality"
+  },
+  "sampler_draws": [
+    170,
+    70
+  ],
+  "dataset_identity": {
+    "datasets": [
+      {
+        "path": "/home/user/NEXUS/data/text.txt",
+        "weight": 1.0,
+        "modality": "text",
+        "format": "auto",
+        "limit": null,
+        "sha256": "89c40a3d2a54f73846014c219a5c6dc2008fdd66abdcb9a66fe99850d800ddea"
+      },
+      {
+        "path": "/home/user/NEXUS/data/code.jsonl",
+        "weight": 0.4,
+        "modality": "code",
+        "format": "auto",
+        "limit": null,
+        "sha256": "d4fb2e8b5b425281c39266a25ff25c1f437139259d66cc62e63850085c446179"
+      }
+    ],
+    "context": 64,
+    "buffer_size": 16,
+    "instruction": false
+  },
+  "finetune": {
+    "steps": 20,
+    "mode": "instruction",
+    "freeze": [
+      "encoder",
+      "position",
+      "core"
+    ],
+    "validation_ce_nats": 3.8475178241729737
+  }
+}

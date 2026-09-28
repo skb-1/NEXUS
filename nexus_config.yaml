@@ -1,0 +1,57 @@
+# Paths are resolved relative to this file. Demo corpus is not a real LLM training set.
+mode: create
+seed: 42
+output: model.nexus
+log_dir: runs
+model:
+  vocab_size: 259
+  hidden_dim: 32
+  depth: 2
+  num_experts: 4
+  active_experts: 2
+  rank: 8
+  context: 64
+  local_window: 8
+  precision: fp32
+turbo:
+  enabled: true
+  threads: auto
+  deterministic: true
+  measure_effect: true
+training:
+  datasets:
+    - path: data/text.txt
+      weight: 1.0
+      modality: text
+    - path: data/code.jsonl
+      weight: 0.4
+      modality: code
+  validation:
+    - path: data/validation.txt
+      weight: 1.0
+  batch_size: 4
+  grad_accum: 1
+  lr: 0.003
+  min_lr_ratio: 0.1
+  weight_decay: 0.01
+  clip_norm: 1.0
+  balance_loss: 0.01
+  epochs: 2
+  steps_per_epoch: 30
+  shuffle_buffer: 16
+  checkpoint_every: 30
+  log_every: 10
+  eval_batches: 4
+  schedule: cosine
+  optimizer: adamw
+finetune:
+  base_model: model.nexus
+  mode: full
+  freeze: []
+  datasets: []
+runtime:
+  max_new_tokens: 64
+  temperature: 0.8
+  top_k: 40
+  top_p: 0.95
+  repetition_penalty: 1.1

@@ -1,0 +1,4 @@
+{"prompt": "What is one plus one?", "response": "Two."}
+{"prompt": "Say hello.", "response": "Hello!"}
+{"prompt": "Напиши приветствие.", "response": "Привет!"}
+{"prompt": "Write Python addition.", "response": "def add(a, b):\n    return a + b"}

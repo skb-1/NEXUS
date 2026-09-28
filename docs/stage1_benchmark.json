@@ -1,0 +1,121 @@
+{
+  "stage": 1,
+  "model": {
+    "vocab_size": 259,
+    "hidden_dim": 32,
+    "depth": 2,
+    "num_experts": 4,
+    "active_experts": 2,
+    "rank": 8,
+    "context": 64,
+    "local_window": 8,
+    "precision": "fp32"
+  },
+  "environment": {
+    "python": "3.11.2",
+    "numpy": "2.4.6",
+    "platform": "Linux-6.1.158+-x86_64-with-glibc2.36",
+    "machine": "x86_64"
+  },
+  "turbo_backend": {
+    "enabled": true,
+    "threads": 1,
+    "backend": "NumPy BLAS",
+    "native_pools_within_scope": [
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "/home/user/NEXUS/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+        "version": "0.3.31.188.0",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX"
+      }
+    ],
+    "custom_simd": false,
+    "numa": false,
+    "lazy_weights": false
+  },
+  "total_parameters": 20355,
+  "active_per_token_upper_bound": 19331,
+  "weight_bytes": 81420,
+  "checkpoint_directory_bytes": 340206,
+  "generation": {
+    "wall_seconds": 0.01593917100001363,
+    "cpu_seconds": 0.015939113999999976,
+    "cpu_percent": 99.99964239034983,
+    "tokens_per_second": 2007.6326428753814,
+    "rss_mb": 39.6328125,
+    "generated_tokens": 32,
+    "total_parameters": 20355,
+    "active_per_token": 19331,
+    "active_forward_max": 20355,
+    "weight_bytes": 81420,
+    "turbo_enabled": true,
+    "warmup_runs": 2,
+    "measured_runs": 7,
+    "wall_seconds_samples": [
+      0.016933902999994643,
+      0.017958108000016182,
+      0.017013288000043758,
+      0.01593917100001363,
+      0.01501782100001492,
+      0.015620560000002115,
+      0.015515703999994912
+    ]
+  },
+  "turbo_comparison": {
+    "reference_forward_ms": 0.7929800000283649,
+    "turbo_forward_ms": 0.6078930000512628,
+    "turbo_speedup": 1.3044729910716095,
+    "turbo_wall_reduction_percent": 23.34068954708587,
+    "reference_cpu_seconds_median": 0.0007942030000000488,
+    "turbo_cpu_seconds_median": 0.0006091260000000154,
+    "max_abs_logit_error": 1.1920928955078125e-06,
+    "numerically_equivalent": true,
+    "repeats": 7,
+    "batch": 1,
+    "sequence_length": 64,
+    "control": "einsum optimize=False vs native BLAS, identical full forward",
+    "reference_ms_samples": [
+      1.1404130000300938,
+      0.9435539999458342,
+      0.7608429999663713,
+      0.7387240000298334,
+      0.7929800000283649,
+      0.7942389999016086,
+      0.7470059999832301
+    ],
+    "turbo_ms_samples": [
+      0.8156409999173775,
+      0.7244880000598641,
+      0.6078930000512628,
+      0.5597100000613864,
+      0.5267599999569939,
+      0.7203210000170657,
+      0.6000859999630848
+    ]
+  },
+  "quality": {
+    "validation_ce_nats": 3.309416370045754,
+    "validation_bits_per_byte_token": 4.774478585301765,
+    "validation_perplexity": 27.369147355484255,
+    "validation_tokens": 744,
+    "quality_note": "sampled held-out next-token loss; includes EOS, not reasoning quality"
+  },
+  "baseline": {
+    "measured": false,
+    "reason": "use --baseline with optional CPU torch"
+  },
+  "limitations": [
+    "byte tokens, not word/subword tokens",
+    "no KV/recurrent inference cache: full rolling window recomputed",
+    "RSS snapshot, not peak RAM",
+    "all weights resident",
+    "no energy/IPC/cache-miss measurements",
+    "toy data is not a language/reasoning benchmark",
+    "active parameters are not FLOPs",
+    "one host and seed; no general speed/quality superiority claim"
+  ]
+}

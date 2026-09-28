@@ -1,0 +1,6 @@
+{"text": "def add(a, b):\n    return a + b\n"}
+{"text": "def square(x):\n    return x * x\n"}
+{"text": "def maximum(a, b):\n    return a if a > b else b\n"}
+{"text": "for i in range(10):\n    print(i)\n"}
+{"text": "values = [1, 2, 3]\ntotal = sum(values)\n"}
+{"text": "def greet(name):\n    return 'Hello, ' + name\n"}

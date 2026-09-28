@@ -1,0 +1,22 @@
+mode: finetune
+seed: 42
+output: finetuned.nexus
+log_dir: runs/finetune
+training:
+  epochs: 1
+  steps_per_epoch: 20
+  lr: 0.001
+  batch_size: 2
+  log_every: 5
+  checkpoint_every: 10
+  validation:
+    - path: data/instructions_validation.jsonl
+finetune:
+  base_model: model.nexus
+  mode: instruction
+  freeze: [encoder, position, core]
+  datasets:
+    - path: data/instructions.jsonl
+      weight: 1.0
+runtime:
+  max_new_tokens: 32
